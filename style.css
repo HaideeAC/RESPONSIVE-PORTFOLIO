@@ -1,9 +1,14 @@
 :root {
   --primary-1: #c5b3c1;
   --primary-2: #d5c6d1;
-  --secondary-1: #CB5000;
+  --secondary-1: #cb5000;
 }
-
+/* Fonts */
+.font1 {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 /* Animation while loading page (START) */
 .loader {
   position: fixed;
@@ -16,8 +21,8 @@
     circle 300px at 50% 50%,
     rgb(251, 251, 251) 0%,
     rgb(243, 242, 240) 33.6%,
-    rgb(211, 207, 202) 61%,
-    rgb(204, 197, 181) 100.7%
+    #B0CAD6 61%,
+    #507DA6 100.7%
   );
 
   display: flex;
@@ -28,7 +33,7 @@
   height: 60px;
   width: 60px;
   border: 4px solid;
-  border-color: rgb(204, 197, 181) transparent rgb(204, 197, 181) transparent;
+  border-color: #507DA6 transparent #507DA6 transparent;
   border-radius: 50%;
   animation: spin 1.5s ease infinite;
 }
@@ -52,6 +57,7 @@
 .body1 {
   color: var(--primary-1);
   text-align: center;
+  text-wrap: balance;
   margin: 0;
   padding: 0;
 }
@@ -153,7 +159,6 @@
 }
 .h1 {
   animation: stretchUp 1s ease-in 0.5s forwards;
-  text-shadow: 0 0px 5px var(--primary-2);
 }
 /* Name animation (END) */
 
@@ -178,4 +183,9 @@
   .container-sm {
     max-width: 100%;
   }
+}
+@media (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    m1
 }
