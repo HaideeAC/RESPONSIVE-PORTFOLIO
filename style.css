@@ -1,5 +1,7 @@
 :root {
-  --primary-c: #c5b3c1;
+  --primary-1: #c5b3c1;
+  --primary-2: #d5c6d1;
+  --secondary-1: #CB5000;
 }
 
 /* Animation while loading page (START) */
@@ -12,10 +14,10 @@
   width: 100%;
   background: radial-gradient(
     circle 300px at 50% 50%,
-    rgba(251, 251, 251, 0) 0%,
-    rgba(243, 242, 240, 1) 33.6%,
-    rgba(211, 207, 202, 1) 61%,
-    rgba(204, 197, 181, 1) 100.7%
+    rgb(251, 251, 251) 0%,
+    rgb(243, 242, 240) 33.6%,
+    rgb(211, 207, 202) 61%,
+    rgb(204, 197, 181) 100.7%
   );
 
   display: flex;
@@ -47,8 +49,15 @@
 }
 /* Animation while loading page (END) */
 
-body {
-  color: #c5b3c1;
+.body1 {
+  color: var(--primary-1);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.body2 {
+  min-height: 100%;
+  background-color: var(--secondary-1);
   text-align: center;
   margin: 0;
   padding: 0;
@@ -73,7 +82,7 @@ body {
 .toggler-icon {
   width: 30px;
   height: 3px;
-  background-color: #d5c6d1;
+  background-color: var(--primary-2);
   display: block;
   transition: all 0.2s;
 }
@@ -117,7 +126,10 @@ body {
 /* Background color for navbar */
 .navbar-scroll {
   background: rgba(139, 105, 130, 0.5);
-  box-shadow: 0 3px 10px #d5c6d1;
+  box-shadow: 0 3px 10px var(--primary-2);
+}
+.navbar-scroll2 {
+  background: none;
 }
 .color-me {
   color: white;
@@ -141,7 +153,7 @@ body {
 }
 .h1 {
   animation: stretchUp 1s ease-in 0.5s forwards;
-  text-shadow: 0 0px 5px #d5c6d1;
+  text-shadow: 0 0px 5px var(--primary-2);
 }
 /* Name animation (END) */
 
@@ -154,7 +166,7 @@ body {
 }
 
 .image:hover {
-  box-shadow: 0 3px 20px #d5c6d1;
+  box-shadow: 0 3px 20px var(--primary-2);
   -webkit-filter: none !important;
   filter: none !important;
   cursor: pointer;
