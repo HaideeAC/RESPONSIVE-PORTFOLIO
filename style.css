@@ -157,9 +157,7 @@
     transform: translateY(-200px);
   }
 }
-.h1 {
-  animation: stretchUp 1s ease-in 0.5s forwards;
-}
+
 /* Name animation (END) */
 
 .image {
@@ -183,8 +181,11 @@
   .container-sm {
     max-width: 100%;
   }
+  .h1 {
+    animation: stretchUp 1s ease-in 0.5s forwards;
+  }
 }
-@media (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+@media (min-device-width: 414px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
   .h1 {
     animation: none;
   }
