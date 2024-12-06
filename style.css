@@ -149,15 +149,13 @@
 /* Name animation (START) */
 @keyframes stretchUp {
   0% {
-    display: none;
-    letter-spacing: -8px;
+    transform: translateY(-5vmin);
   }
   50% {
     letter-spacing: 8px;
   }
   100% {
     letter-spacing: 3px;
-    transform: translateY(-5vmin);
   }
 }
 
@@ -179,12 +177,13 @@
 }
 
 .main-image {
-  width: 25vmin;
-  height: 30vmin;
+  object-fit: cover;
+  width: 250px;
+  height: 300px;
   border-radius: 50%;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .container,
   .container-md,
   .container-sm {
@@ -194,8 +193,11 @@
     animation: stretchUp 1s ease-in 0.5s forwards;
   }
 }
-@media (min-device-width: 414px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
+@media (width <= 767px) {
   .h1 {
     animation: none;
+  }
+  .main-image {
+    height: 80px;
   }
 }
