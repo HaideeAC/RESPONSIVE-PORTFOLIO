@@ -33,6 +33,7 @@
   height: 60px;
   width: 60px;
   border: 4px solid;
+  color: #507da6;
   border-color: #507da6 transparent #507da6 transparent;
   border-radius: 50%;
   animation: spin 1.5s ease infinite;
@@ -147,14 +148,16 @@
 
 /* Name animation (START) */
 @keyframes stretchUp {
-  30% {
-    letter-spacing: 15px;
+  0% {
+    display: none;
+    letter-spacing: -8px;
   }
-  85% {
-    letter-spacing: 5px;
+  50% {
+    letter-spacing: 8px;
   }
   100% {
-    transform: translateY(-200px);
+    letter-spacing: 3px;
+    transform: translateY(-5vmin);
   }
 }
 
@@ -173,6 +176,12 @@
   -webkit-filter: none !important;
   filter: none !important;
   cursor: pointer;
+}
+
+.main-image {
+  width: 25vmin;
+  height: 30vmin;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) {
