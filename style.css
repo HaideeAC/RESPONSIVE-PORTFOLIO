@@ -187,10 +187,31 @@
   cursor: pointer;
 }
 
-/* Projects (START) */
-/* Projects (END) */
-
-
+/* Projects carousel(START) */
+/* Carousel */
+.carousel {
+  width: 99vw;
+  height: 90vh;
+  position: relative;
+  z-index: 100;
+}
+.carousel .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+.image2 {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.carousel .list .item .content {
+  position: absolute;
+  top: 20%;
+  width: 1140px;
+  max-width: 80%;
+}
+/* Projects carousel(END) */
 
 @media (width >= 768px) {
   .container,
