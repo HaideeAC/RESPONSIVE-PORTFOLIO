@@ -9,6 +9,11 @@
   font-weight: 600;
   font-style: normal;
 }
+.font2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
 /* Animation while loading page (START) */
 .loader {
   position: fixed;
@@ -200,24 +205,125 @@
   inset: 0 0 0 0;
 }
 .image2 {
-  width: 70%;
+  width: 80%;
   max-width: 900px;
   height: 95%;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 5px;
+  filter: blur(4px);
 }
 .carousel .list .item .content {
   position: absolute;
-  top: 20%;
-  width: 1140px;
-  max-width: 80%;
-  left: 60%;
-  transform: translate(-65%);
+  top: 10%;
+  width: 60%;
+  max-width: 890px;
+  left: 50%;
+  transform: translate(-50%);
   box-sizing: border-box;
-border: 1px solid white;
+  border: 1px solid white;
   border-radius: 5px;
   color: white;
-  text-shadow: 0 5px 10px black;
+  text-shadow: 0 3px 10px rgb(0, 0, 0);
+}
+.carousel .list .item .content .project-name {
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+a {
+  text-decoration: none;
+}
+svg {
+  font-size: 4em;
+  height: 20px;
+  width: 40px;
+}
+/* Thumbnail */
+.thumbnail {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+.thumbnail .item {
+  width: 150px;
+  height: 190px;
+  flex-shrink: 0;
+  position: relative;
+}
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
+}
+.thumbnail .item .content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: white;
+}
+.thumbnail .item .content .project-name {
+  font-weight: bold;
+}
+/* Arrows */
+.arrows {
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.arrows button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee4;
+  border: none;
+  font-family: monospace;
+  color: #fff;
+  font-weight: bold;
+  font-size: larger;
+  transition: 0.5s;
+}
+.arrows button:hover {
+  color: #555;
+  background-color: #eee;
+}
+.carousel .list .item:nth-child(1) {
+  z-index: 1;
+}
+.carousel .list .item:nth-child(1) .project-name,
+.carousel .list .item:nth-child(1) .project-description,
+.carousel .list .item:nth-child(1) .buttons {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.7s 1s linear 1 forwards;
+}
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+.carousel .list .item:nth-child(1) .project-name {
+  animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .project-description {
+  animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) .buttons {
+  animation-delay: 1.6s;
 }
 /* Projects carousel(END) */
 
