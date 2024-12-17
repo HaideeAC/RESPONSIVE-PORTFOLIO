@@ -288,11 +288,11 @@ svg {
   border-radius: 50%;
   background-color: #eee4;
   border: none;
-  font-family: monospace;
   color: #fff;
   font-weight: bold;
   font-size: larger;
   transition: 0.5s;
+  z-index: 100;
 }
 .arrows button:hover {
   color: #555;
@@ -324,6 +324,27 @@ svg {
 }
 .carousel .list .item:nth-child(1) .buttons {
   animation-delay: 1.6s;
+}
+/* Effect next click */
+.carousel .next .list .item:nth-child(1) img {
+  width: 150px;
+  height: 190px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  border-radius: 20px;
+  animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage {
+  to {
+    width: 80%;
+    max-width: 900px;
+    height: 95%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+    filter: blur(4px);
+  }
 }
 /* Projects carousel(END) */
 
