@@ -211,7 +211,8 @@
   object-fit: cover;
   overflow: hidden;
   border-radius: 5px;
-  filter: blur(4px);
+  filter: blur(2px);
+  transition: ease-in-out;
 }
 .carousel .list .item .content {
   position: absolute;
@@ -225,6 +226,8 @@
   border-radius: 5px;
   color: white;
   text-shadow: 0 3px 10px rgb(0, 0, 0);
+  padding: 10px;
+  background-color: #507da6;
 }
 .carousel .list .item .content .project-name {
   font-weight: bold;
@@ -336,19 +339,17 @@ a:hover {
   transition: ease-in-out;
 }
 @keyframes showImage {
-  0%,
-  30%,
-  60% {
+  /* 0% {
     width: 150px;
     height: 190px;
     position: absolute;
     bottom: 50px;
-    left: 48%;
+    left: 50%;
     border-radius: 20px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
     filter: blur(0);
-  }
-  99% {
+  } */
+  to{
     width: 80%;
     max-width: 900px;
     height: 95%;
@@ -362,6 +363,7 @@ a:hover {
   width: 0;
   overflow: hidden;
   animation: showThumbnail 0.5s linear 1 forwards;
+  transition: ease-in-out;
 }
 @keyframes showThumbnail {
   to {
@@ -426,12 +428,23 @@ a:hover {
 /* time */
 .time {
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: #fff;
   position: absolute;
   z-index: 100;
-  top: 0;
+  margin-bottom: 0;
+  bottom: 0;
   left: 0;
+}
+.carousel.next .time,
+.carousel.prev .time {
+  width: 100%;
+  animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning {
+  to {
+    width: 0;
+  }
 }
 /* Projects carousel(END) */
 
@@ -457,5 +470,8 @@ a:hover {
     margin-top: 30px;
     border-left: none;
     border-top: 1px dashed var(--primary-1);
+  }
+  .carousel .list .item .project-name {
+    font-size: 15px;
   }
 }
