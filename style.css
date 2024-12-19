@@ -230,14 +230,12 @@
   font-weight: bold;
   letter-spacing: 10px;
 }
-a {
-  text-decoration: none;
-}
 svg {
   font-size: 4em;
   height: 20px;
   width: 40px;
 }
+
 /* Thumbnail */
 .thumbnail {
   position: absolute;
@@ -270,6 +268,13 @@ svg {
 }
 .thumbnail .item .content .project-name {
   font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: var(--primary-1);
 }
 /* Arrows */
 .arrows {
@@ -326,17 +331,24 @@ svg {
   animation-delay: 1.6s;
 }
 /* Effect next click */
-.carousel .next .list .item:nth-child(1) img {
-  width: 150px;
-  height: 190px;
-  position: absolute;
-  left: 50%;
-  bottom: 50px;
-  border-radius: 20px;
-  animation: showImage 0.5s linear 1 forwards;
+.carousel.next .list .item:nth-child(1) img {
+  animation: showImage 0.7s linear 1 forwards;
+  transition: ease-in-out;
 }
 @keyframes showImage {
-  to {
+  0%,
+  30%,
+  60% {
+    width: 150px;
+    height: 190px;
+    position: absolute;
+    bottom: 50px;
+    left: 48%;
+    border-radius: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
+    filter: blur(0);
+  }
+  99% {
     width: 80%;
     max-width: 900px;
     height: 95%;
@@ -344,6 +356,25 @@ svg {
     overflow: hidden;
     border-radius: 5px;
     filter: blur(4px);
+  }
+}
+.carousel.next .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+@keyframes showThumbnail {
+  to {
+    width: 150px;
+  }
+}
+.carousel.next .thumbnail {
+  transform: translateX(150px);
+  animation: transformThumbnail 0.5s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+  to {
+    transform: translateX(0);
   }
 }
 /* Projects carousel(END) */
