@@ -222,7 +222,6 @@
   left: 50%;
   transform: translate(-50%);
   box-sizing: border-box;
-  border: 1px solid white;
   border-radius: 5px;
   color: white;
   text-shadow: 0 3px 10px rgb(0, 0, 0);
@@ -353,14 +352,13 @@ a:hover {
   width: 0;
   overflow: hidden;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
-border-radius: 20px;
+  border-radius: 20px;
   animation: showThumbnail 0.5s linear 1 forwards;
   transition: ease-in-out;
 }
 @keyframes showThumbnail {
   to {
     width: 150px;
-
   }
 }
 .carousel.next .thumbnail {
@@ -383,7 +381,8 @@ border-radius: 20px;
   bottom: 0;
   left: 0;
   filter: blur(0);
-  animation: outImage 0.5s linear 1 forwards;
+  animation: outImage 0.1s linear 1 forwards;
+  transition: ease-in-out;
 }
 @keyframes outImage {
   to {
@@ -393,6 +392,7 @@ border-radius: 20px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
     left: 50%;
     bottom: 50px;
+    display: none;
   }
 }
 .carousel.prev .thumbnail .item:nth-child(1) {
@@ -404,7 +404,7 @@ border-radius: 20px;
 .carousel.prev .list .item:nth-child(2) .project-name,
 .carousel.prev .list .item:nth-child(2) .project-description,
 .carousel.prev .list .item:nth-child(2) .buttons {
-  animation: contentOut 1.5s linear 1 forwards;
+  animation: contentOut 0.5s linear 1 forwards;
 }
 @keyframes contentOut {
   to {
