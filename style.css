@@ -1,7 +1,8 @@
 :root {
   --primary-1: #c5b3c1;
-  --primary-2: #d5c6d1;
+  --primary-2: #e6d5e2;
   --secondary-1: #cb5000;
+  --secondary-blue: #507da6;
 }
 /* Fonts */
 .font1 {
@@ -59,22 +60,23 @@
   }
 }
 /* Animation while loading page (END) */
-
-.body1 {
-  color: var(--primary-1);
+body {
   text-align: center;
-  text-wrap: balance;
   margin: 0;
   padding: 0;
+}
+.body1 {
+  color: white;
+  background-color: var(--secondary-1);
+  text-wrap: balance;
 }
 .body2 {
   min-height: 100%;
-  background-color: var(--secondary-1);
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  background-color: white;
 }
-
+.body3 {
+  background-color: var(--secondary-blue);
+}
 /* Navbar design (START) */
 .navbar-toggler {
   border: none;
@@ -91,10 +93,11 @@
   border-radius: 50%;
 }
 /* Lines of Toggler*/
-.toggler-icon {
+.toggler-icon,
+.toggler-icon2 {
   width: 30px;
   height: 3px;
-  background-color: var(--primary-2);
+  background-color: var(--primary-1);
   display: block;
   transition: all 0.2s;
 }
@@ -123,6 +126,10 @@
 .navbar-toggler.collapsed .toggler-icon {
   background-color: rgb(255, 255, 255);
 }
+.navbar-toggler.collapsed .toggler-icon2 {
+  background-color: var(--secondary-1);
+}
+
 .navbar-toggler.collapsed .top-bar {
   transform: rotate(0);
 }
@@ -137,8 +144,7 @@
 
 /* Background color for navbar */
 .navbar-scroll {
-  background: rgba(139, 105, 130, 0.5);
-  box-shadow: 0 3px 10px var(--primary-2);
+  background-color: none;
 }
 .navbar-scroll2 {
   background: none;
@@ -146,8 +152,14 @@
 .color-me {
   color: white;
 }
+.color-me2 {
+  color: var(--secondary-1);
+}
 .color-me:hover {
-  color: #e6d5e2;
+  color: var(--primary-2);
+}
+.color-me2:hover {
+  color: var(--primary-2);
 }
 /* Navbar design (END) */
 
@@ -175,7 +187,7 @@
 #image-track {
   margin-top: 20px;
   padding-top: 10%;
-  border-left: 1px dashed var(--primary-1);
+  border-left: 1px dashed var(--primary-2);
 }
 
 .image {
@@ -211,7 +223,7 @@
   object-fit: cover;
   overflow: hidden;
   border-radius: 5px;
-  filter: blur(2px);
+  filter: blur(3px);
   transition: ease-in-out;
 }
 .carousel .list .item .content {
@@ -224,9 +236,9 @@
   box-sizing: border-box;
   border-radius: 5px;
   color: white;
-  text-shadow: 0 3px 10px rgb(0, 0, 0);
+  text-shadow: 0 2px 5px rgb(0, 0, 0);
   padding: 10px;
-  background-color: #507da6;
+  background-color: var(--secondary-blue);
 }
 .carousel .list .item .content .project-name {
   font-weight: bold;
@@ -236,6 +248,9 @@ svg {
   font-size: 4em;
   height: 20px;
   width: 40px;
+}
+svg:hover path {
+  fill: #fce57e;
 }
 
 /* Thumbnail */
@@ -276,7 +291,7 @@ a {
   color: white;
 }
 a:hover {
-  color: var(--primary-1);
+  color: #fce57e;
 }
 /* Arrows */
 .arrows {
@@ -308,20 +323,23 @@ a:hover {
 .carousel .list .item:nth-child(1) {
   z-index: 1;
 }
+.carousel .list .item:nth-child(1) .content,
 .carousel .list .item:nth-child(1) .project-name,
 .carousel .list .item:nth-child(1) .project-description,
 .carousel .list .item:nth-child(1) .buttons {
-  transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
   animation: showContent 0.7s 1s linear 1 forwards;
+  transition: ease-in-out;
 }
 @keyframes showContent {
   to {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
   }
+}
+.carousel .list .item:nth-child(1) .content {
+  animation-delay: 1s;
 }
 .carousel .list .item:nth-child(1) .project-name {
   animation-delay: 1.2s;
@@ -364,6 +382,7 @@ a:hover {
 .carousel.next .thumbnail {
   transform: translateX(150px);
   animation: transformThumbnail 0.5s linear 1 forwards;
+  transition: ease-in-out;
 }
 @keyframes transformThumbnail {
   to {
@@ -400,7 +419,9 @@ a:hover {
   overflow: hidden;
   opacity: 0;
   animation: showThumbnail 0.5s linear 1 forwards;
+  transition: ease-in-out;
 }
+.carousel.prev .list .item:nth-child(2) .content,
 .carousel.prev .list .item:nth-child(2) .project-name,
 .carousel.prev .list .item:nth-child(2) .project-description,
 .carousel.prev .list .item:nth-child(2) .buttons {
@@ -408,7 +429,6 @@ a:hover {
 }
 @keyframes contentOut {
   to {
-    transform: translateY(150px);
     filter: blur(20px);
     opacity: 0;
   }
@@ -442,7 +462,7 @@ a:hover {
   #image-track {
     margin-top: 30px;
     border-left: none;
-    border-top: 1px dashed var(--primary-1);
+    border-top: 1px dashed var(--primary-2);
   }
   .carousel .list .item .project-name {
     font-size: 15px;
