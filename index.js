@@ -4,6 +4,61 @@ window.addEventListener("load", function () {
   loader.className += " hidden"; // add hidden as a class
 });
 
+// Circulating text
+const textContainer = document.getElementById("circular-text");
+const textMap = [
+  { text: "• HAIDEE ALVAREZ ", className: "name-link" },
+  { text: "• PROJECT ", className: "project-link" },
+  { text: "• CONTACT ", className: "contact-link" },
+];
+const radius = 175;
+let rotationPaused = false;
+let currentRotation = 0;
+let animationFrame;
+
+function createCircularText(textMap) {
+  let totalChars = textMap.reduce((sum, item) => sum + item.text.length, 0);
+  let angleOffset = 360 / totalChars;
+  let angle = -90;
+
+  textMap.forEach(({ text, className }) => {
+    for (let i = 0; i < text.length; i++) {
+      let span = document.createElement("span");
+      span.innerText = text[i];
+      span.classList.add(className);
+      let radian = angle * (Math.PI / 180);
+      let x = radius * Math.cos(radian);
+      let y = radius * Math.sin(radian);
+      span.style.transform = `translate(${x}px, ${y}px) rotate(${
+        angle + 90
+      }deg)`;
+      textContainer.appendChild(span);
+      angle += angleOffset;
+    }
+  });
+}
+
+function rotateText() {
+  if (!rotationPaused) {
+    currentRotation = (currentRotation + 0.2) % 360;
+    textContainer.style.transform = `translate(-50%, -50%) rotate(${currentRotation}deg)`;
+  }
+  animationFrame = requestAnimationFrame(rotateText);
+}
+
+createCircularText(textMap);
+rotateText();
+
+textContainer.addEventListener("mouseenter", () => {
+  rotationPaused = true;
+  cancelAnimationFrame(animationFrame);
+});
+
+textContainer.addEventListener("mouseleave", () => {
+  rotationPaused = false;
+  rotateText();
+});
+
 // Projects Carousel
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
