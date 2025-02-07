@@ -6,6 +6,7 @@ window.addEventListener("load", function () {
 
 // Circulating text
 const textContainer = document.getElementById("circular-text");
+const presentationCard = document.getElementById("presentation-card");
 const textMap = [
   { text: "• HAIDEE ALVAREZ ", className: "name-link" },
   { text: "• PROJECT ", className: "project-link" },
@@ -34,6 +35,15 @@ function createCircularText(textMap) {
       }deg)`;
       textContainer.appendChild(span);
       angle += angleOffset;
+
+      if (className === "name-link") {
+        span.addEventListener("mouseenter", () => {
+          presentationCard.style.display = "block";
+        });
+        span.addEventListener("mouseleave", () => {
+          presentationCard.style.display = "none";
+        });
+      }
     }
   });
 }

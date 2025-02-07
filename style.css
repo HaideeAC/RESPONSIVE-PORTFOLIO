@@ -244,25 +244,7 @@ container-body1 {
   transform-origin: center;
 }
 
-.presentation-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -150%);
-  width: 180px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 10px;
-  display: none;
-}
 
-.presentation-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
 
 .body2 {
   min-height: 100%;
