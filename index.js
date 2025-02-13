@@ -5,45 +5,39 @@ window.addEventListener("load", function () {
 });
 
 // Circulating text
-const textContainer = document.getElementById("circular-text");
-const presentationCard = document.getElementById("presentation-card");
-const textMap = [
-  { text: "• HAIDEE ALVAREZ ", className: "name-link" },
-  { text: "• PROJECT ", className: "project-link" },
-  { text: "• CONTACT ", className: "contact-link" },
+const textContainers = [
+  document.getElementById("circular-text1"),
+  document.getElementById("circular-text2"),
+  document.getElementById("circular-text3"),
 ];
-const radius = 175;
+
+const words = ["• HAIDEE ALVAREZ ", "• DEVELOPER ", "• BASED IN LONDON "];
+const radius = 110;
 let rotationPaused = false;
 let currentRotation = 0;
 let animationFrame;
 
-function createCircularText(textMap) {
-  let totalChars = textMap.reduce((sum, item) => sum + item.text.length, 0);
-  let angleOffset = 360 / totalChars;
+function createCircularText() {
+  let fullText = words.join(""); // Combine all words into one continuous string
+  let totalChars = fullText.length;
+  let angleOffset = 360 / totalChars; // Distribute characters evenly
   let angle = -90;
+  let charIndex = 0;
 
-  textMap.forEach(({ text, className }) => {
-    for (let i = 0; i < text.length; i++) {
+  // Loop through each text container and distribute letters sequentially
+  textContainers.forEach((container, index) => {
+    for (let i = 0; i < words[index].length; i++) {
       let span = document.createElement("span");
-      span.innerText = text[i];
-      span.classList.add(className);
+      span.innerText = fullText[charIndex]; // Get letter from fullText sequence
       let radian = angle * (Math.PI / 180);
       let x = radius * Math.cos(radian);
       let y = radius * Math.sin(radian);
       span.style.transform = `translate(${x}px, ${y}px) rotate(${
         angle + 90
       }deg)`;
-      textContainer.appendChild(span);
+      container.appendChild(span);
       angle += angleOffset;
-
-      if (className === "name-link") {
-        span.addEventListener("mouseenter", () => {
-          presentationCard.style.display = "block";
-        });
-        span.addEventListener("mouseleave", () => {
-          presentationCard.style.display = "none";
-        });
-      }
+      charIndex++;
     }
   });
 }
@@ -51,22 +45,26 @@ function createCircularText(textMap) {
 function rotateText() {
   if (!rotationPaused) {
     currentRotation = (currentRotation + 0.2) % 360;
-    textContainer.style.transform = `translate(-50%, -50%) rotate(${currentRotation}deg)`;
+    textContainers.forEach((container) => {
+      container.style.transform = `translate(-50%, -50%) rotate(${currentRotation}deg)`;
+    });
   }
   animationFrame = requestAnimationFrame(rotateText);
 }
 
-createCircularText(textMap);
+createCircularText();
 rotateText();
 
-textContainer.addEventListener("mouseenter", () => {
-  rotationPaused = true;
-  cancelAnimationFrame(animationFrame);
-});
+textContainers.forEach((container) => {
+  container.addEventListener("mouseenter", () => {
+    rotationPaused = true;
+    cancelAnimationFrame(animationFrame);
+  });
 
-textContainer.addEventListener("mouseleave", () => {
-  rotationPaused = false;
-  rotateText();
+  container.addEventListener("mouseleave", () => {
+    rotationPaused = false;
+    rotateText();
+  });
 });
 
 // Projects Carousel

@@ -201,6 +201,7 @@ body {
 }
 /* Name animation (END) */
 
+/* Home design (START) */
 .body1 {
   color: white;
   background-color: var(--secondary-1);
@@ -210,25 +211,24 @@ container-body1 {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
   margin: 0;
 }
 .main-image {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid white;
+  border: 2px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .circular-text {
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
@@ -243,8 +243,7 @@ container-body1 {
   position: absolute;
   transform-origin: center;
 }
-
-
+/* Home design (END) */
 
 .body2 {
   min-height: 100%;
@@ -262,16 +261,7 @@ container-body1 {
   position: absolute;
   inset: 0 0 0 0;
 }
-.image2 {
-  width: 80%;
-  max-width: 900px;
-  height: 95%;
-  object-fit: cover;
-  overflow: hidden;
-  border-radius: 5px;
-  filter: blur(3px);
-  transition: ease-in-out;
-}
+
 .carousel .list .item .content {
   position: absolute;
   top: 10%;
@@ -303,7 +293,6 @@ svg:hover path {
 .thumbnail {
   position: absolute;
   bottom: 50px;
-  left: 50%;
   width: max-content;
   z-index: 100;
   display: flex;
@@ -339,33 +328,7 @@ a {
 a:hover {
   color: #fce57e;
 }
-/* Arrows */
-.arrows {
-  position: absolute;
-  top: 80%;
-  right: 52%;
-  width: 300px;
-  max-width: 30%;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.arrows button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #eee4;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: larger;
-  transition: 0.5s;
-  z-index: 100;
-}
-.arrows button:hover {
-  color: #555;
-  background-color: #eee;
-}
+
 .carousel .list .item:nth-child(1) {
   z-index: 1;
 }
@@ -379,6 +342,9 @@ a:hover {
   transition: ease-in-out;
 }
 @keyframes showContent {
+  from {
+    display: none;
+  }
   to {
     opacity: 1;
     filter: blur(0);
@@ -396,94 +362,15 @@ a:hover {
 .carousel .list .item:nth-child(1) .buttons {
   animation-delay: 1.6s;
 }
-/* Effect next click (START) */
-.carousel.next .list .item:nth-child(1) img {
-  animation: showImage 0.7s linear 1 forwards;
-  transition: ease-in-out;
-}
-@keyframes showImage {
-  to {
-    width: 80%;
-    max-width: 900px;
-    height: 95%;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 5px;
-    filter: blur(4px);
-  }
-}
-.carousel.next .thumbnail .item:nth-child(1) {
-  width: 0;
-  overflow: hidden;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
-  border-radius: 20px;
-  animation: showThumbnail 0.5s linear 1 forwards;
-  transition: ease-in-out;
-}
-@keyframes showThumbnail {
-  to {
-    width: 150px;
-  }
-}
-.carousel.next .thumbnail {
-  transform: translateX(150px);
-  animation: transformThumbnail 0.5s linear 1 forwards;
-  transition: ease-in-out;
-}
-@keyframes transformThumbnail {
-  to {
-    transform: translateX(0);
-  }
-}
-/* Effect next click (END) */
 
-/* Effect prev click (START) */
-.carousel.prev .list .item:nth-child(2) {
-  z-index: 2;
-}
-.carousel.prev .list .item:nth-child(2) img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  filter: blur(0);
-  animation: outImage 0.1s linear 1 forwards;
-  transition: ease-in-out;
-}
-@keyframes outImage {
-  to {
-    width: 150px;
-    height: 190px;
-    border-radius: 20px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.686);
-    left: 50%;
-    bottom: 50px;
-    display: none;
-  }
-}
-.carousel.prev .thumbnail .item:nth-child(1) {
-  width: 0;
-  overflow: hidden;
-  opacity: 0;
-  animation: showThumbnail 0.5s linear 1 forwards;
-  transition: ease-in-out;
-}
-.carousel.prev .list .item:nth-child(2) .content,
-.carousel.prev .list .item:nth-child(2) .project-name,
-.carousel.prev .list .item:nth-child(2) .project-description,
-.carousel.prev .list .item:nth-child(2) .buttons {
-  animation: contentOut 0.5s linear 1 forwards;
-}
+/* Effect CONTENT OUT (START) */
 @keyframes contentOut {
   to {
     filter: blur(20px);
     opacity: 0;
   }
 }
-/* Effect prev click (END) */
-.carousel.next .arrows button,
-.carousel.prev .arrows button {
-  pointer-events: none;
-}
+/* Effect CONTENT OUT (END) */
 
 /* Projects carousel(END) */
 
