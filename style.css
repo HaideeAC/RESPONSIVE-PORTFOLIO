@@ -15,6 +15,7 @@
   font-weight: 300;
   font-style: normal;
 }
+
 /* Animation while loading page (START) */
 .loader {
   position: fixed;
@@ -245,11 +246,11 @@ container-body1 {
 }
 /* Home design (END) */
 
+/* Projects design(START) */
 .body2 {
   min-height: 100%;
   background-color: white;
 }
-/* Projects carousel(START) */
 /* Carousel */
 .carousel {
   width: 99vw;
@@ -372,7 +373,7 @@ a:hover {
 }
 /* Effect CONTENT OUT (END) */
 
-/* Projects carousel(END) */
+/* Projects design(END) */
 
 @media (width >= 768px) {
   .container,
