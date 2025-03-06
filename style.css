@@ -429,8 +429,8 @@ h6 {
 }
 
 .profile-img {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -1430,5 +1430,183 @@ h6 {
 
   .contact-intro-alt {
     margin-bottom: 1rem;
+  }
+}
+/* Compact Projects Page Styles */
+.compact-projects {
+  padding-top: 80px !important;
+  padding-bottom: 0 !important;
+  max-width: 100%;
+}
+
+.project-heading-compact {
+  color: var(--secondary-1);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  position: relative;
+  font-size: 2rem;
+}
+
+.project-heading-compact:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-1);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Grid Layout */
+.projects-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Card Styling */
+.project-card-compact {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: calc(100vh - 180px);
+  max-height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.project-image-compact {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-compact img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(80, 125, 166, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.project-card-compact:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card-compact:hover .project-image-compact img {
+  transform: scale(1.1);
+}
+
+.project-overlay h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.project-links svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.project-links a:hover svg {
+  fill: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .projects-grid-compact {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .project-card-compact {
+    height: calc((100vh - 180px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid-compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .compact-projects {
+    padding-top: 70px !important;
+  }
+  
+  .project-heading-compact {
+    font-size: 1.75rem;
+  }
+  
+  .project-card-compact {
+    height: calc((100vh - 150px) / 3);
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid-compact {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .compact-projects {
+    padding-top: 60px !important;
+  }
+  
+  .project-heading-compact {
+    font-size: 1.5rem;
+  }
+  
+  .project-card-compact {
+    height: calc((100vh - 120px) / 5);
   }
 }
