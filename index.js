@@ -2,13 +2,13 @@
 window.addEventListener("load", function () {
   const loader = document.querySelector(".loader");
   if (loader) {
+    // Add the hidden class first
+    loader.classList.add("hidden");
+
+    // Then remove the loader from DOM after animation completes
     setTimeout(() => {
-      loader.className += " hidden"; // add hidden as a class
-      // Remove loader completely from DOM after animation finishes
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
-    }, 100);
+      loader.style.display = "none";
+    }, 500); // Match this to your CSS fadeOut animation duration
   }
 });
 
