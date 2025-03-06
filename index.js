@@ -214,3 +214,74 @@ const initProjectsCarousel = () => {
 
 // Initialize the projects carousel if it exists
 document.addEventListener("DOMContentLoaded", initProjectsCarousel);
+// Project filtering functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        // Filter projects
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const filter = button.getAttribute('data-filter');
+            
+            projectItems.forEach(item => {
+              if (filter === 'all') {
+                item.style.display = 'block';
+              } else {
+                const categories = item.getAttribute('data-category').split(' ');
+                if (categories.includes(filter)) {
+                  item.style.display = 'block';
+                } else {
+                  item.style.display = 'none';
+                }
+              }
+            });
+            
+            // Trigger layout recalculation
+            setTimeout(() => {
+              window.dispatchEvent(new Event('resize'));
+            }, 200);
+          });
+        });
+        
+        // Initialize Isotope-like layout (simplified version)
+        function arrangeItems() {
+          const visibleItems = Array.from(projectItems).filter(item => 
+            item.style.display !== 'none'
+          );
+          
+          if (window.innerWidth <= 767) {
+            // Mobile: stack vertically
+            visibleItems.forEach(item => {
+              item.style.width = '100%';
+            });
+          } else if (window.innerWidth <= 991) {
+            // Tablet: 2 columns
+            visibleItems.forEach((item, index) => {
+              item.style.width = 'calc(50% - 10px)';
+            });
+          } else {
+            // Desktop: dynamic grid
+            visibleItems.forEach((item, index) => {
+              if (visibleItems.length <= 3) {
+                item.style.width = 'calc(33.333% - 10px)';
+              } else if (visibleItems.length === 4) {
+                item.style.width = 'calc(50% - 10px)';
+              } else {
+                const isFirstOrLast = index === 0 || index === visibleItems.length - 1;
+                item.style.width = isFirstOrLast ? 'calc(50% - 10px)' : 'calc(33.333% - 10px)';
+              }
+            });
+          }
+        }
+        
+        // Initial arrangement
+        arrangeItems();
+        
+        // Rearrange on window resize
+        window.addEventListener('resize', arrangeItems);
+      });
