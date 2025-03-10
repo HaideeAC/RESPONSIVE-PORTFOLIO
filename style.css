@@ -27,17 +27,16 @@
   --light: #f8f9fa;
   --success: #2ecc71;
   --shadow: rgba(0, 0, 0, 0.1); */
- --primary: #9e7b9b;           /* Dusty Mauve */
-  --primary-dark: #7d5f7a;      /* Deep Mauve */
-  --primary-light: #c8a9c4;     /* Soft Lavender Pink */
-  --secondary: #cb997e;         /* Terracotta */
-  --secondary-light: #ddbea9;   /* Warm Clay */
-  --accent: #f4f1ea;            /* Antique White */
-  --dark: #4a3b3e;              /* Mocha Brown */
-  --light: #fbf9f6;             /* Seashell */
-  --success: #6b8e6b;           /* Forest Moss */
+  --primary: #9e7b9b; /* Dusty Mauve */
+  --primary-dark: #7d5f7a; /* Deep Mauve */
+  --primary-light: #c8a9c4; /* Soft Lavender Pink */
+  --secondary: #cb997e; /* Terracotta */
+  --secondary-light: #ddbea9; /* Warm Clay */
+  --accent: #f4f1ea; /* Antique White */
+  --dark: #4a3b3e; /* Mocha Brown */
+  --light: #fbf9f6; /* Seashell */
+  --success: #6b8e6b; /* Forest Moss */
   --shadow: rgba(64, 50, 52, 0.08);
-  
 
   /* Spacing & Layout */
   --container-padding: 2rem;
@@ -120,6 +119,86 @@
   .contact-methods {
     gap: 1rem;
     margin-bottom: 1.5rem;
+  }
+}
+
+/* Extra Small Devices (max-width: 350px) */
+@media (max-width: 350px) {
+  /* Fix container and wrapper to remove side gap */
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-section {
+    padding: 60px 0 0;
+  }
+
+  .contact-wrapper {
+    gap: 1rem;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-info-panel {
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .contact-header-alt {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .contact-intro-alt {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .contact-methods {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-method-item {
+    gap: 0.75rem;
+  }
+
+  .social-connect h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .social-links-alt {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .contact-form-panel {
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Remove any residual padding from parent containers */
+  .px-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
