@@ -65,11 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initProjectFilters();
   }
   
-  // Projects carousel setup (only if present)
-  if (document.querySelector('.carousel')) {
-    initProjectsCarousel();
-  }
-  
   // Initial animation check
   animateOnScroll();
   
@@ -165,124 +160,83 @@ function initSmoothScroll() {
 
 // Initialize project filtering
 function initProjectFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectItems = document.querySelectorAll('.project-item');
-  
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectItems = document.querySelectorAll(".project-item");
+
   // Filter projects
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
       // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      
-      const filter = button.getAttribute('data-filter');
-      
-      projectItems.forEach(item => {
-        if (filter === 'all') {
-          item.style.display = 'block';
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      projectItems.forEach((item) => {
+        if (filter === "all") {
+          item.style.display = "block";
         } else {
-          const categories = item.getAttribute('data-category').split(' ');
-          item.style.display = categories.includes(filter) ? 'block' : 'none';
+          const categories = item.getAttribute("data-category").split(" ");
+          item.style.display = categories.includes(filter) ? "block" : "none";
         }
       });
-      
+
       // Trigger layout recalculation
-      setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-      }, 200);
+      if (window.ResizeObserver) {
+        requestAnimationFrame(() => {
+          window.dispatchEvent(new Event("resize"));
+        });
+      } else {
+        setTimeout(() => {
+          window.dispatchEvent(new Event("resize"));
+        }, 200);
+      }
     });
   });
-  
+
   // Handle responsive layout
   function arrangeItems() {
-    const visibleItems = Array.from(projectItems).filter(item => 
-      item.style.display !== 'none'
+    const visibleItems = Array.from(projectItems).filter(
+      (item) => item.style.display !== "none"
     );
-    
+
+    // Responsive layout with cleaner breakpoints
     if (window.innerWidth <= 767) {
       // Mobile: stack vertically
-      visibleItems.forEach(item => {
-        item.style.width = '100%';
+      visibleItems.forEach((item) => {
+        item.style.width = "100%";
       });
     } else if (window.innerWidth <= 991) {
       // Tablet: 2 columns
-      visibleItems.forEach(item => {
-        item.style.width = 'calc(50% - 10px)';
+      visibleItems.forEach((item) => {
+        item.style.width = "calc(50% - 10px)";
       });
     } else {
       // Desktop: dynamic grid
       visibleItems.forEach((item, index) => {
-        if (visibleItems.length <= 3) {
-          item.style.width = 'calc(33.333% - 10px)';
-        } else if (visibleItems.length === 4) {
-          item.style.width = 'calc(50% - 10px)';
+        const itemCount = visibleItems.length;
+        if (itemCount <= 3) {
+          item.style.width = "calc(33.333% - 10px)";
+        } else if (itemCount === 4) {
+          item.style.width = "calc(50% - 10px)";
         } else {
-          const isFirstOrLast = index === 0 || index === visibleItems.length - 1;
-          item.style.width = isFirstOrLast ? 'calc(50% - 10px)' : 'calc(33.333% - 10px)';
+          const isFirstOrLast = index === 0 || index === itemCount - 1;
+          item.style.width = isFirstOrLast
+            ? "calc(50% - 10px)"
+            : "calc(33.333% - 10px)";
         }
       });
     }
   }
-  
-  // Initial arrangement and resize handler
+
+  // Initial arrangement and resize handler with debounce
   arrangeItems();
-  window.addEventListener('resize', arrangeItems);
+
+  // Debounce resize handler for better performance
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(arrangeItems, 100);
+  });
 }
 
-// Initialize projects carousel
-function initProjectsCarousel() {
-  const nextDom = document.getElementById("next");
-  const prevDom = document.getElementById("prev");
-  const carouselDom = document.querySelector(".carousel");
-  const sliderDom = carouselDom?.querySelector(".list");
-  const thumbnailBorderDom = carouselDom?.querySelector(".thumbnail");
-  const thumbnailItemsDom = thumbnailBorderDom?.querySelectorAll(".item");
-
-  if (!sliderDom || !thumbnailBorderDom || !thumbnailItemsDom) return;
-
-  thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-  const timeRunning = 3000;
-  const timeAutoNext = 10000;
-  let runTimeOut;
-  let runNextAuto;
-
-  function showSlider(type) {
-    const sliderItemsDom = sliderDom.querySelectorAll(".item");
-    const thumbnailItems = thumbnailBorderDom.querySelectorAll(".item");
-
-    if (type === "next") {
-      sliderDom.appendChild(sliderItemsDom[0]);
-      thumbnailBorderDom.appendChild(thumbnailItems[0]);
-      carouselDom.classList.add("next");
-    } else {
-      sliderDom.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
-      thumbnailBorderDom.prepend(thumbnailItems[thumbnailItems.length - 1]);
-      carouselDom.classList.add("prev");
-    }
-
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-      carouselDom.classList.remove("next");
-      carouselDom.classList.remove("prev");
-    }, timeRunning);
-
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
-      if (nextDom) nextDom.click();
-    }, timeAutoNext);
-  }
-
-  // Set up click handlers
-  if (nextDom) {
-    nextDom.onclick = () => showSlider("next");
-  }
-  
-  if (prevDom) {
-    prevDom.onclick = () => showSlider("prev");
-  }
-
-  // Start auto-rotation
-  runNextAuto = setTimeout(() => {
-    if (nextDom) nextDom.click();
-  }, timeAutoNext);
-}
