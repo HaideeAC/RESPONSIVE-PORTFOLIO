@@ -2,19 +2,24 @@
   --primary: #9e7b9b; 
   --primary-dark: #7d5f7a; 
   --primary-light: #c8a9c4;
-  --secondary: #cb997e;
-  --secondary-dark: #c25c2c; 
-  --secondary-light: #ddbea9; 
+  --secondary: #c25c2c;
+  --secondary-dark: #843e1e; 
+  --secondary-light: #f1d0c1; 
   --accent: #f4f1ea; 
   --dark: #4a3b3e; 
   --light: #fbf9f6; 
-  --success: #708770;
+  --success: #A89C29;
+  --success-dark: #494412;
+  --success-light: #d3c74c;
+  --yoga:#4974a5;
+  --yoga-dark: #5B81AE;
+  --yoga-light: #C8D5E4;
   --shadow: rgba(64, 50, 52, 0.08);
 }
 
 /* fonts */
-.fontDelius {
-  font-family: "Delius", cursive;
+.font1 {
+  font-family: "Walter Turncoat", cursive;
   font-weight: 400;
   font-style: normal;
 }

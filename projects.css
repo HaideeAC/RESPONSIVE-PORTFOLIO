@@ -1,0 +1,36 @@
+/* PROJECTS */
+
+.projects {
+  min-height: 100vh;
+  background: var(--success);
+  padding: 20px;
+}
+.project {
+  background-color: var(--success-dark);
+  padding: 10px;
+  margin: 5px;
+}
+
+.projects h3 {
+  font-size: 2rem;
+  color: var(--yoga-light);
+}
+.projects p {
+  color: var(--success-dark);
+}
+.project-image img {
+  width: 300px;
+  border-radius: 5px;
+}
+
+.fa-project {
+  background: var(--success-light);
+  padding: 4px;
+  border-radius: 50%;
+  color: var(--success);
+  font-size: 1.1rem;
+}
+.fa-project:hover {
+  background: var(--success-dark);
+  color: var(--success-light);
+}

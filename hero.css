@@ -1,27 +1,38 @@
 .hero {
-    background: var(--secondary-dark);
-    padding: 20px;
-    min-height: 100vh;
+  background: var(--secondary);
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
 }
-
-.hero p{
-    font-size: 0.8rem;
-}
-
 
 .hero h1 {
-    text-align: left;
-    color: var(--accent);
-    font-size: 2rem;
-  }
-
-.hero h2 {
-    font-size: 1rem;
-    font-weight: normal;
+  text-align: left;
+  color: var(--accent);
+  font-size: 2rem;
 }
 
-.fa-brands {
-    font-size: 1.5rem;
-    color: var(--accent);
+.hero h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
 
+.fa-hero {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
 }
