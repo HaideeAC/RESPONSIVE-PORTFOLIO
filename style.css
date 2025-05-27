@@ -1,25 +1,21 @@
 :root {
-  --primary: #9e7b9b; /* Dusty Mauve */
-  --primary-dark: #7d5f7a; /* Deep Mauve */
-  --primary-light: #c8a9c4; /* Soft Lavender Pink */
-  --secondary: #cb997e; /* Terracotta */
-  --secondary-light: #ddbea9; /* Warm Clay */
-  --accent: #f4f1ea; /* Antique White */
-  --dark: #4a3b3e; /* Mocha Brown */
-  --light: #fbf9f6; /* Seashell */
-  --success: #6b8e6b; /* Forest Moss */
+  --primary: #9e7b9b; 
+  --primary-dark: #7d5f7a; 
+  --primary-light: #c8a9c4;
+  --secondary: #cb997e;
+  --secondary-dark: #c25c2c; 
+  --secondary-light: #ddbea9; 
+  --accent: #f4f1ea; 
+  --dark: #4a3b3e; 
+  --light: #fbf9f6; 
+  --success: #708770;
   --shadow: rgba(64, 50, 52, 0.08);
 }
 
+/* fonts */
 .fontDelius {
   font-family: "Delius", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-body {
-  background: var(--primary-light);
-}
-h1 {
-  color: var(--primary-dark);
-}

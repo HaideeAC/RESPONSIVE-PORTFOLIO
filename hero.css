@@ -1,0 +1,22 @@
+.hero {
+    background: var(--secondary-dark);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.hero p{
+    font-size: 0.8rem;
+}
+
+
+.hero h1 {
+    text-align: left;
+    color: var(--accent);
+    font-size: 2rem;
+  }
+
+.hero h2 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+  
