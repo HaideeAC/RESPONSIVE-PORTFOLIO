@@ -12,14 +12,14 @@
 }
 
 .projects h3 {
-  font-size: 2rem;
-  color: var(--yoga-light);
+    font-size: 2rem;
+    color: var(--yoga-light);
 }
 .projects p {
-  color: var(--success-dark);
+  color: var(--success-light);
 }
 .project-image img {
-  width: 300px;
+  width: 80%;
   border-radius: 5px;
 }
 
