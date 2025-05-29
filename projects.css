@@ -1,9 +1,10 @@
 /* PROJECTS */
 
 .projects {
-  min-height: 100vh;
   background: var(--success);
   padding: 20px;
+  min-height: 100vh;
+  position: relative;
 }
 .project {
   background-color: var(--success-dark);
@@ -12,8 +13,8 @@
 }
 
 .projects h3 {
-    font-size: 2rem;
-    color: var(--yoga-light);
+  font-size: 2rem;
+  color: var(--yoga-light);
 }
 .projects p {
   color: var(--success-light);

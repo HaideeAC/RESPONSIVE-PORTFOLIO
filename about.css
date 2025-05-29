@@ -1,0 +1,23 @@
+.about {
+  background-image: url(/images/about1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.about h2 {
+  color: var(--accent);
+  font-size: 3rem;
+}
+
+.about p {
+    color: var(--accent);
+    background: #4944129d;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
