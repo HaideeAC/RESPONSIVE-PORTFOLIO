@@ -12,6 +12,11 @@
   margin: 5px;
 }
 
+.projects h2 {
+  font-size: calc(1.7rem + 0.5vw);
+color: var(--accent);
+
+}
 .projects h3 {
   font-size: 2rem;
   color: var(--yoga-light);
