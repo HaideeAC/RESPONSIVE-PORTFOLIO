@@ -36,3 +36,20 @@
 .social-icons a:hover {
   transform: translateY(-2px);
 }
+
+
+/* NavBar */
+
+.fa-menu {
+  color: var(--accent);
+  font-size: calc(1.7rem + 0.5vw);
+  
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+  font-size: calc(0.8rem + 0.5vw);
+  color: var(--accent);
+
+}
