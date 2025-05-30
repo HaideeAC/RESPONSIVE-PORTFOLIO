@@ -52,5 +52,5 @@
 
   .fa-contact-send {
     font-size: calc(1.5rem + 0.3vw);
-
+    color: var(--accent);
   }
