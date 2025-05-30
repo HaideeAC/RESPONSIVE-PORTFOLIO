@@ -10,19 +10,21 @@
   background-color: var(--success-dark);
   padding: 10px;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .projects h2 {
   font-size: calc(1.7rem + 0.5vw);
-color: var(--accent);
+color: black;
 
 }
 .projects h3 {
-  font-size: 2rem;
+  font-size: calc(1.7rem + 0.4vw);
   color: var(--yoga-light);
 }
 .projects p {
   color: var(--success-light);
+  font-size: calc(0.8rem + 0.3vw);
 }
 .project-image img {
   width: 80%;
@@ -34,7 +36,7 @@ color: var(--accent);
   padding: 4px;
   border-radius: 50%;
   color: var(--success);
-  font-size: 1.1rem;
+  font-size: calc(0.8rem + 0.5vw);
 }
 .fa-project:hover {
   background: var(--success-dark);
