@@ -38,14 +38,36 @@
   </head>
   <body>
     <!-- Nav Bar -->
-    <nav>
-      <i class="fa-menu fa-regular fa-circle"></i>
-      <ul>
-        <li>Home</li>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
+    <nav class="navbar-style position-fixed w-100">
+      <div class="container-fluid d-flex justify-content-end">
+        <div class="nav-toggle">
+          <button
+            class="nav-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <img src="/images/blanco.png" class="fa-menu" alt="" />
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- Home -->
@@ -67,7 +89,7 @@
     </div>
 
     <!-- Projects -->
-    <div class="projects font2 container-fluid">
+    <div id="projects" class="projects font2 container-fluid">
       <div class="row justify-content-center">
         <!-- Project 1 -->
         <div class="col-12 font1 mt-1">
@@ -217,7 +239,7 @@
     </div>
 
     <!-- About -->
-    <div class="about container-fluid">
+    <div id="about" class="about container-fluid">
       <div class="row">
         <div class="col-12 font1 mt-1">
           <h2>About</h2>
@@ -255,7 +277,7 @@
     </div>
 
     <!-- Contact -->
-    <div class="contact container-fluid d-flex flex-column">
+    <div id="contact" class="contact container-fluid d-flex flex-column">
       <div class="row">
         <div class="col-12 font1 mt-1">
           <h2>Get in touch</h2>

@@ -15,7 +15,7 @@
 
 .projects h2 {
   font-size: calc(1.7rem + 0.5vw);
-color: black;
+color: var(--success-dark);
 
 }
 .projects h3 {
