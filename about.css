@@ -17,7 +17,9 @@
 .about p {
     color: var(--accent);
     background: #4944129d;
+    backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
     border-radius: 5px;
     padding: 20px;
-    font-size: calc(0.8rem + 0.5vw);
+    font-size: calc(0.8rem + 0.3vw);
 }

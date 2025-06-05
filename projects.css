@@ -12,11 +12,9 @@
   margin: 5px;
   border-radius: 5px;
 }
-
 .projects h2 {
   font-size: calc(1.7rem + 0.5vw);
-color: var(--success-dark);
-
+  color: var(--success-dark);
 }
 .projects h3 {
   font-size: calc(1.7rem + 0.4vw);

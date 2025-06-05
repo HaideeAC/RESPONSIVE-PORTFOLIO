@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Haidee is a developer, profesionally trained, based in London"
+    />
     <title>🌻Haidee Alvarez - Developer</title>
     <!-- bootstrap -->
     <link
@@ -54,16 +58,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/" title="Homepage">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="#projects" title="About page"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about" title="About page">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact" title="Contact page"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -277,113 +285,100 @@
     </div>
 
     <!-- Contact -->
-    <div id="contact" class="contact container-fluid d-flex flex-column">
-      <div class="row">
-        <div class="col-12 font1 mt-1">
-          <h2>Get in touch</h2>
+    <div id="contact" class="contact container-fluid">
+      <!-- Contact Form Section -->
+      <div class="contact-content">
+        <div class="row">
+          <div class="col-12 font1 mt-1">
+            <h2>Get in touch</h2>
+          </div>
+        </div>
+
+        <div
+          class="contact-form-wrapper d-flex align-items-center justify-content-center"
+        >
+          <div class="col-md-6 col-lg-4">
+            <form class="contact-form">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="♡ Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="✉ Email"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="✍︎ Write your message"
+                  required
+                ></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                  <a href="mailto:haidee.alvarez.c@gmail.com">
+                    <i class="fa-contact-send fa-regular fa-paper-plane"></i>
+                  </a>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div class="flex-grow-1 d-flex align-items-center justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <form class="contact-form">
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="♡ Name"
-                required
-              />
+      <!-- Footer -->
+      <footer class="footer-section">
+        <div class="container-fluid">
+          <div class="divider-line"></div>
+
+          <div class="row footer-content justify-content-around g-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="footer-block text-center">
+                <div class="social-media">
+                  <a
+                    href="https://www.instagram.com/haidee.ac/"
+                    target="_blank"
+                  >
+                    <i class="fa-footer fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/haidee-alvarez/"
+                    target="_blank"
+                  >
+                    <i class="fa-footer fa-brands fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="https://wa.me/+447925295665?text=Hello%20there"
+                    target="_blank"
+                  >
+                    <i class="fa-footer fa-brands fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="✉ Email"
-                required
-              />
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="footer-block text-center">
+                <div class="quick-links">
+                  <a href="#about">About me</a>
+                  <a href="#projects">Portfolio</a>
+                  <a href="#contact">Contact</a>
+                </div>
+              </div>
             </div>
-            <div class="mb-4">
-              <textarea
-                class="form-control"
-                rows="4"
-                placeholder="✍︎ Write your message"
-                required
-              ></textarea>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">
-                <a href="mailto:haidee.alvarez.c@gmail.com"
-                  ><i class="fa-contact-send fa-regular fa-paper-plane"></i
-                ></a>
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/haidee.ac/" target="_blank"
-          ><i class="fa-hero fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/haidee-alvarez/" target="_blank"
-          ><i class="fa-hero fa-brands fa-linkedin" href=""></i
-        ></a>
-        <a href="https://github.com/HaideeAC" target="_blank"
-          ><i class="fa-hero fa-brands fa-github" href=""></i
-        ></a>
-        <a href="#"><i class="fa-hero fa-solid fa-at"></i></a>
-      </div>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer-section container-fluid">
-      <div class="divider-line"></div>
-
-      <div class="row footer-content justify-content-between">
-        <!-- Contact Information -->
-        <div class="col-sm-4 mb-4">
-          <div class="footer-block text-center">
-            <p class="location-text">Based in London</p>
-            <div class="social-media mt-3">
-              <a href="https://www.instagram.com/haidee.ac/" target="_blank">
-                <i class="fa-footer fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/haidee-alvarez/"
-                target="_blank"
-              >
-                <i class="fa-footer fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://wa.me/+447925295665?text=Hello%20there"
-                target="_blank"
-              >
-                <i class="fa-footer fa-brands fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="col-sm-4 mb-4">
-          <div class="footer-block text-center">
-            <p class="cta-text">Available for new collaborations.</p>
-            <a class="footer-btn" href="#contact">Get in touch</a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-sm-4 mb-4">
-          <div class="footer-block text-center">
-            <div class="quick-links">
-              <a href="#about">About me</a>
-              <a href="#projects">Portfolio</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
   <script src="/index.js"></script>
 </html>
